@@ -7,6 +7,7 @@ import (
 	"os"
 	"strconv"
 
+	"github.com/joho/godotenv"
 	"github.com/shomali11/slacker"
 )
 
@@ -22,6 +23,7 @@ func printCommandEvents(analyticsChannel <-chan *slacker.CommandEvent) {
 }
 
 func main() {
+	godotenv.Load()
 	os.Getenv("SLACK_BOT_TOKEN")
 	os.Getenv("SLACK_APP_TOKEN")
 
